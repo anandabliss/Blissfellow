@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ananda Grejo · Fine Art</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      background: #0D0D0D;
+      color: #E8E3DE;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection {
+      background: #C48B73;
+      color: #0D0D0D;
+    }
+
+    h1, h2, h3, h4, .logo, .hero-title, .collection-tag {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      letter-spacing: 0.02em;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 300;
+      line-height: 1.15;
+    }
+
+    h2 {
+      font-size: 2.8rem;
+      font-weight: 300;
+      letter-spacing: 0.03em;
+      color: #E8E3DE;
+    }
+
+    .subtitle {
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #8A8580;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 24px;
+      }
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 28px 0;
+      background: rgba(13, 13, 13, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      transition: 0.3s;
+    }
+
+    .header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: #E8E3DE;
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      transition: color 0.3s;
+    }
+
+    .logo:hover {
+      color: #C48B73;
+    }
+
+    nav {
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    nav a {
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #8A8580;
+      text-decoration: none;
+      transition: 0.3s;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: #C48B73;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #E8E3DE;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.3rem;
+      color: #E8E3DE;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      nav {
+        display: none;
+        flex-direction: column;
+        gap: 1.5rem;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        background: #0D0D0D;
+        padding: 2rem 48px;
+        border-bottom: 1px solid rgba(255,255,255,0.04);
+      }
+      nav.active {
+        display: flex;
+      }
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 140px 0 80px;
+      background: #0D0D0D;
+    }
+
+    .hero-content {
+      text-align: center;
+      max-width: 780px;
+      padding: 0 20px;
+    }
+
+    .hero-image {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto 3.5rem;
+      aspect-ratio: 16/9;
+      background: #1A1817;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #3A3530;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      position: relative;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-image .placeholder-icon {
+      font-size: 3rem;
+      opacity: 0.15;
+      margin-right: 12px;
+    }
+
+    .hero-image .image-credit {
+      position: absolute;
+      bottom: 20px;
+      right: 24px;
+      font-size: 0.55rem;
+      color: rgba(255,255,255,0.15);
+      letter-spacing: 0.05em;
+    }
+
+    .hero-tag {
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #8A8580;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-title {
+      font-size: 4rem;
+      font-weight: 300;
+      line-height: 1.1;
+      color: #E8E3DE;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-title .highlight {
+      color: #C48B73;
+      font-style: italic;
+    }
+
+    .hero-desc {
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      font-size: 1.1rem;
+      color: #8A8580;
+      max-width: 580px;
+      margin: 0 auto 2.8rem;
+      line-height: 1.7;
+    }
+
+    .btn-primary {
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #E8E3DE;
+      text-decoration: none;
+      padding: 14px 48px;
+      border: 1px solid #C48B73;
+      transition: all 0.4s;
+      display: inline-block;
+      background: transparent;
+    }
+
+    .btn-primary:hover {
+      background: #C48B73;
+      color: #0D0D0D;
+    }
+
+    .btn-secondary {
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #8A8580;
+      text-decoration: none;
+      padding: 10px 32px;
+      border: 1px solid #3A3530;
+      transition: 0.3s;
+      display: inline-block;
+      background: transparent;
+      margin-top: 0.5rem;
+    }
+
+    .btn-secondary:hover {
+      border-color: #8A8580;
+      color: #E8E3DE;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.8rem;
+      }
+      .hero-desc {
+        font-size: 0.95rem;
+      }
+      .hero-image {
+        aspect-ratio: 4/3;
+      }
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+      padding: 80px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto 3rem;
+    }
+
+    .section-header h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .section-header p {
+      color: #8A8580;
+      font-weight: 200;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .section-divider {
+      width: 30px;
+      height: 1px;
+      background: #C48B73;
+      margin: 1rem auto;
+      opacity: 0.4;
+    }
+
+    /* ===== GALLERY - EFEITO FLUTUANTE ===== */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .gallery-item {
+      position: relative;
+      aspect-ratio: 4/5;
+      background: #1A1817;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #3A3530;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+      border-radius: 2px;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .gallery-item:nth-child(1) { animation-delay: 0s; }
+    .gallery-item:nth-child(2) { animation-delay: 0.5s; }
+    .gallery-item:nth-child(3) { animation-delay: 1s; }
+    .gallery-item:nth-child(4) { animation-delay: 1.5s; }
+    .gallery-item:nth-child(5) { animation-delay: 2s; }
+    .gallery-item:nth-child(6) { animation-delay: 2.5s; }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-12px) scale(1.01);
+      background: #22201E;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .gallery-item .icon-placeholder {
+      font-size: 2.5rem;
+      opacity: 0.12;
+    }
+
+    .gallery-item .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 2rem 1.5rem 1.5rem;
+      background: linear-gradient(transparent, rgba(13,13,13,0.85));
+      opacity: 0;
+      transition: 0.5s;
+      transform: translateY(10px);
+    }
+
+    .gallery-item:hover .overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .gallery-item .overlay h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.2rem;
+      color: #E8E3DE;
+      letter-spacing: 0.04em;
+    }
+
+    .gallery-item .overlay p {
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #8A8580;
+    }
+
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+      .gallery-item {
+        animation: none !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+      .gallery-item {
+        aspect-ratio: 4/3;
+        animation: none !important;
+      }
+    }
+
+    /* ===== COLLECTIONS ===== */
+    .collections-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem 2.5rem;
+    }
+
+    .collection-tag {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1rem;
+      color: #8A8580;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid transparent;
+      transition: 0.3s;
+      cursor: default;
+      letter-spacing: 0.06em;
+    }
+
+    .collection-tag:hover {
+      color: #C48B73;
+      border-bottom-color: #C48B73;
+    }
+
+    /* ===== ABOUT ===== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .about-text p {
+      margin-bottom: 1.2rem;
+      color: #B0A8A0;
+      font-weight: 200;
+      font-size: 1rem;
+      line-height: 1.9;
+    }
+
+    .about-text .signature {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 300;
+      color: #C48B73;
+      margin-top: 1.5rem;
+      letter-spacing: 0.04em;
+    }
+
+    .about-image {
+      aspect-ratio: 3/4;
+      background: #1A1817;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #3A3530;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      border-radius: 2px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-image .placeholder-icon {
+      font-size: 3.5rem;
+      opacity: 0.12;
+      margin-right: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .about-image {
+        aspect-ratio: 4/3;
+      }
+    }
+
+    /* ===== FINE ART ===== */
+    .fineart-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+    }
+
+    .fineart-item {
+      text-align: center;
+      padding: 1rem 0.5rem;
+      border-top: 1px solid rgba(255,255,255,0.04);
+      transition: 0.3s;
+    }
+
+    .fineart-item:hover {
+      border-top-color: #C48B73;
+    }
+
+    .fineart-item .icon {
+      font-size: 1.8rem;
+      color: #C48B73;
+      margin-bottom: 0.8rem;
+      opacity: 0.4;
+      transition: 0.3s;
+    }
+
+    .fineart-item:hover .icon {
+      opacity: 0.8;
+    }
+
+    .fineart-item h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1rem;
+      color: #E8E3DE;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.2rem;
+    }
+
+    .fineart-item p {
+      font-size: 0.8rem;
+      color: #8A8580;
+      font-weight: 200;
+      line-height: 1.6;
+      max-width: 180px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .fineart-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .fineart-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ===== TESTIMONIAL ===== */
+    .testimonial {
+      max-width: 580px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .testimonial blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.6rem;
+      line-height: 1.5;
+      color: #E8E3DE;
+      letter-spacing: 0.02em;
+    }
+
+    .testimonial blockquote::before {
+      content: '"';
+      color: #C48B73;
+      font-size: 2.8rem;
+      line-height: 0;
+      vertical-align: -0.4rem;
+      margin-right: 4px;
+      opacity: 0.4;
+    }
+
+    .testimonial blockquote::after {
+      content: '"';
+      color: #C48B73;
+      font-size: 2.8rem;
+      line-height: 0;
+      vertical-align: -0.4rem;
+      margin-left: 4px;
+      opacity: 0.4;
+    }
+
+    .testimonial .stars {
+      color: #C48B73;
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      margin-top: 0.6rem;
+    }
+
+    .testimonial cite {
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: #8A8580;
+      font-style: normal;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .contact-info p {
+      margin-bottom: 0.5rem;
+      color: #B0A8A0;
+      font-weight: 200;
+    }
+
+    .contact-info .contact-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #8A8580;
+      margin-top: 1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .contact-info .social-links {
+      display: flex;
+      gap: 1.8rem;
+      margin-top: 1.5rem;
+    }
+
+    .contact-info .social-links a {
+      color: #8A8580;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    .contact-info .social-links a:hover {
+      color: #C48B73;
+    }
+
+    .contact-info .quote-box {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: #1A1817;
+      border-left: 2px solid #C48B73;
+      border-radius: 2px;
+    }
+
+    .contact-info .quote-box p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      color: #E8E3DE;
+      margin: 0;
+      font-weight: 300;
+      letter-spacing: 0.03em;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 14px 0;
+      margin-bottom: 1.2rem;
+      border: none;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      background: transparent;
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      font-size: 0.9rem;
+      color: #E8E3DE;
+      transition: 0.3s;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: #3A3530;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-bottom-color: #C48B73;
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 70px;
+    }
+
+    .contact-form button {
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #0D0D0D;
+      background: #C48B73;
+      border: none;
+      padding: 14px 48px;
+      cursor: pointer;
+      transition: 0.3s;
+      border-radius: 2px;
+    }
+
+    .contact-form button:hover {
+      background: #E8E3DE;
+    }
+
+    @media (max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      padding: 60px 0 32px;
+      border-top: 1px solid rgba(255,255,255,0.04);
+      text-align: center;
+    }
+
+    footer .logo-footer {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: #E8E3DE;
+      letter-spacing: 0.08em;
+    }
+
+    footer .footer-tagline {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.6rem;
+      color: #8A8580;
+      font-weight: 200;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    footer .footer-divider {
+      width: 20px;
+      height: 1px;
+      background: #C48B73;
+      margin: 1rem auto;
+      opacity: 0.3;
+    }
+
+    footer p {
+      font-size: 0.65rem;
+      color: #3A3530;
+      font-weight: 200;
+      letter-spacing: 0.05em;
+    }
+
+    .bg-dark-soft {
+      background: #141312;
+    }
+
+    .text-center { text-align: center; }
+    .mt-2 { margin-top: 2rem; }
+    .mb-2 { margin-bottom: 2rem; }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.4rem; }
+      h2 { font-size: 2rem; }
+      section { padding: 60px 0; }
+      .testimonial blockquote { font-size: 1.3rem; }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 0 20px; }
+      .hero { padding: 120px 0 60px; }
+      .btn-primary { padding: 12px 32px; font-size: 0.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="container header-flex">
+      <a href="#inicio" class="logo">Ananda Grejo</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav id="mainNav">
+        <a href="#galeria">Galeria</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#fineart">Fine Art</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="inicio">
+    <div class="container hero-content">
+      <div class="hero-image">
+        <span class="placeholder-icon"><i class="fas fa-image"></i></span>
+        <span style="font-family: 'Cormorant Garamond', serif; font-size: 1rem; opacity: 0.2;">Sua imagem aqui</span>
+        <span class="image-credit">© Ananda Grejo</span>
+      </div>
+
+      <p class="hero-tag">Fine Art Photography</p>
+      <h1 class="hero-title">
+        Fotografias que convidam<br>a <span class="highlight">desacelerar</span>
+      </h1>
+      <p class="hero-desc">
+        — imagens que pulsam como uma estrada aberta.<br>
+        Natureza, silêncio, viagens lentas. Um convite à contemplação.
+      </p>
+      <a href="#galeria" class="btn-primary">Conheça a coleção</a>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY ===== -->
+  <section id="galeria" style="padding-top: 50px;">
+    <div class="container">
+      <div class="section-header">
+        <p class="subtitle">Coleções</p>
+        <h2>Águas · Caminhos · Silêncio</h2>
+        <div class="section-divider"></div>
+        <p>Fragmentos de quietude. Instantes que merecem ser lembrados.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <span class="icon-placeholder"><i class="fas fa-water"></i></span>
+          <div class="overlay"><h4>Águas</h4><p>Lagos, rios e o mar</p></div>
+        </div>
+        <div class="gallery-item">
+          <span class="icon-placeholder"><i class="fas fa-mountain"></i></span>
+          <div class="overlay"><h4>Caminhos</h4><p>Trilhas e horizontes</p></div>
+        </div>
+        <div class="gallery-item" style="border: 1px solid rgba(196,139,115,0.08);">
+          <span class="icon-placeholder"><i class="fas fa-cloud"></i></span>
+          <div class="overlay"><h4>Silêncio</h4><p>Atmosferas de calma</p></div>
+        </div>
+        <div class="gallery-item">
+          <span class="icon-placeholder"><i class="fas fa-sun"></i></span>
+          <div class="overlay"><h4>Horizonte</h4><p>Luz e amplitude</p></div>
+        </div>
+        <div class="gallery-item">
+          <span class="icon-placeholder"><i class="fas fa-tree"></i></span>
+          <div class="overlay"><h4>Brasil</h4><p>Paisagens brasileiras</p></div>
+        </div>
+        <div class="gallery-item">
+          <span class="icon-placeholder"><i class="fas fa-globe-americas"></i></span>
+          <div class="overlay"><h4>Mundo</h4><p>Olhares pelo globo</p></div>
+        </div>
+      </div>
+
+      <div class="text-center mt-2">
+        <a href="#" class="btn-secondary">Ver todas as imagens</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COLLECTIONS TAGS ===== -->
+  <section style="padding: 10px 0 50px;">
+    <div class="container">
+      <div class="collections-wrapper">
+        <span class="collection-tag">Águas</span>
+        <span class="collection-tag">Caminhos</span>
+        <span class="collection-tag">Silêncio</span>
+        <span class="collection-tag">Horizonte</span>
+        <span class="collection-tag">Brasil</span>
+        <span class="collection-tag">Mundo</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="sobre" class="bg-dark-soft">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="subtitle">Sobre</p>
+          <h2>Ananda Grejo</h2>
+          <p>
+            Viajante, naturóloga e artista em descoberta. Trabalhei em hotéis e spas de luxo, onde aprendi que o verdadeiro bem-estar está nos detalhes — na luz da manhã, no silêncio de uma paisagem, no gesto acolhedor.
+          </p>
+          <p>
+            Minha fotografia nasce da contemplação. Cada imagem é um convite a desacelerar, a respirar, a enxergar a beleza discreta que o mundo nos oferece.
+          </p>
+          <p><em style="color: #8A8580; font-weight: 200;">"Fotografar é parar o tempo. É escolher o que merece ser lembrado."</em></p>
+          <div class="signature">Ananda Grejo</div>
+        </div>
+        <div class="about-image">
+          <span class="placeholder-icon"><i class="fas fa-user-circle"></i></span>
+          <span style="font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; opacity: 0.2;">Ananda · retrato</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINE ART ===== -->
+  <section id="fineart">
+    <div class="container">
+      <div class="section-header">
+        <p class="subtitle">Impressões Fine Art</p>
+        <h2>Arte que se sente</h2>
+        <div class="section-divider"></div>
+        <p>Papel algodão, pigmentos arquivais, edições limitadas.</p>
+      </div>
+
+      <div class="fineart-grid">
+        <div class="fineart-item">
+          <div class="icon"><i class="fas fa-file-alt"></i></div>
+          <h4>Papel Fine Art</h4>
+          <p>Algodão 100% com textura suave.</p>
+        </div>
+        <div class="fineart-item">
+          <div class="icon"><i class="fas fa-palette"></i></div>
+          <h4>Pigmentos arquivais</h4>
+          <p>Resistência superior a 100 anos.</p>
+        </div>
+        <div class="fineart-item">
+          <div class="icon"><i class="fas fa-hashtag"></i></div>
+          <h4>Edição limitada</h4>
+          <p>Máximo de 30 exemplares por obra.</p>
+        </div>
+        <div class="fineart-item">
+          <div class="icon"><i class="fas fa-signature"></i></div>
+          <h4>Assinada</h4>
+          <p>Numerada e autenticada.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIAL ===== -->
+  <section class="bg-dark-soft" style="padding: 70px 0;">
+    <div class="container">
+      <div class="testimonial">
+        <blockquote>
+          Uma experiência que transcende a imagem. As fotografias da Ananda têm alma.
+        </blockquote>
+        <div class="stars">✦ ✦ ✦ ✦ ✦</div>
+        <cite>— Cliente · 5 estrelas</cite>
+
+        <div class="section-divider" style="margin: 2rem auto;"></div>
+
+        <blockquote style="font-size: 1.3rem;">
+          Sua presença transforma qualquer ambiente em um lugar de paz.
+        </blockquote>
+        <cite>— Ex-colega de hotelaria</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contato">
+    <div class="container">
+      <div class="section-header">
+        <p class="subtitle">Contato</p>
+        <h2>Vamos conversar</h2>
+        <div class="section-divider"></div>
+        <p>Para adquirir uma fotografia ou agendar um projeto.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p class="contact-label">E-mail</p>
+          <p>ananda@anandagrejo.com</p>
+
+          <p class="contact-label">Telefone</p>
+          <p>+55 (11) 9 8765-4321</p>
+
+          <p class="contact-label">Localização</p>
+          <p>Entre o Brasil e o mundo</p>
+
+          <div class="social-links">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+
+          <div class="quote-box">
+            <p>“A beleza está nos olhos de quem desacelera.”</p>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <input type="text" placeholder="Seu nome" required>
+          <input type="email" placeholder="Seu e-mail" required>
+          <textarea placeholder="Sua mensagem..." rows="4"></textarea>
+          <button type="submit">Enviar mensagem</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="logo-footer">Ananda Grejo</div>
+      <p class="footer-tagline">Fine Art Photography</p>
+      <div class="footer-divider"></div>
+      <p style="font-size: 0.6rem; color: #C48B73; letter-spacing: 0.15rem; margin-bottom: 0.8rem;">
+        Fotografias que convidam a desacelerar
+      </p>
+      <p>© 2026 Ananda Grejo · Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('mainNav');
+
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+        toggle.innerHTML = nav.classList.contains('active') ?
+          '<i class="fas fa-times"></i>' :
+          '<i class="fas fa-bars"></i>';
+      });
+    }
+
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('active');
+        if (toggle) toggle.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Obrigada! Sua mensagem foi enviada.');
+      this.reset();
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
